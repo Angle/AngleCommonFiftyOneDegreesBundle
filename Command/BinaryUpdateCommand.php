@@ -20,7 +20,7 @@ class BinaryUpdateCommand extends ContainerAwareCommand
     {
         $output->writeln("Updating 51 Degrees binary file it may take awhile please be patient...");
 
-        $fiftyOneDegrees = $this->getContainer()->get('angle_common_fifty_one_degrees');
+        $fiftyOneDegrees = $this->getContainer()->get('fiftyonedegrees');
         $fiftyOneDegrees->updateBinary();
 
     }

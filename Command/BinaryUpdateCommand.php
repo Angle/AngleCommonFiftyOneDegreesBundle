@@ -23,7 +23,7 @@ class BinaryUpdateCommand extends ContainerAwareCommand
         $_SERVER['HTTP_USER_AGENT'] = " ";
         $fiftyOneDegrees = $this->getContainer()->get('fiftyonedegrees');
         $fiftyOneDegrees->updateBinary();
-
+        $output->writeln("Done");
     }
 
 }

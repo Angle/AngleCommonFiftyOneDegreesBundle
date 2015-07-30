@@ -4,7 +4,6 @@ namespace Angle\Common\FiftyOneDegreesBundle\DependencyInjection;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
 
 
@@ -16,14 +15,31 @@ class AngleCommonFiftyOneDegreesExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(array(__DIR__.'/../Resources/config')));
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $configuration = new Configuration();
-        $processor = new Processor();
-        $config = $processor->process($configuration->getConfigTreeBuilder(), $configs);
+        if (!isset($config['data_file_path'])) {
+            throw new \InvalidArgumentException(
+                'The option "angle_common_fifty_one_degrees.data_file_path" must be set.'
+            );
+        }
 
-        $container->getDefinition('angle_common_fifty_one_degrees')
-            ->addArgument($config['data_file_path']);
+        $container->setParameter(
+            'angle_common_fifty_one_degrees.data_file_path.',
+            $config['data_file_path']
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     * @version 0.0.1
+     * @since 0.0.1
+     */
+    public function getAlias()
+    {
+        return 'angle_common_fifty_one_degrees';
     }
 }

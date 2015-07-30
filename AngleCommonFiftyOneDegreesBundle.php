@@ -4,7 +4,7 @@ namespace Angle\Common\FiftyOneDegreesBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FiftyOneDegreesBundle extends Bundle
+class AngleCommonFiftyOneDegreesBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

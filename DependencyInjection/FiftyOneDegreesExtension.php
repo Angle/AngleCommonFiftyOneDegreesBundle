@@ -23,7 +23,6 @@ class FiftyOneDegreesExtension extends Extension
         $processor = new Processor();
         $config = $processor->process($configuration->getConfigTreeBuilder(), $configs);
 
-        $container->getDefinition('fiftyonedegrees')
-            ->addArgument($config['data_file_path']);
+        $container->getDefinition('fiftyonedegrees');
     }
 }

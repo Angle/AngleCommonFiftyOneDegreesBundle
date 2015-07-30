@@ -4,4 +4,3 @@ parameters:
 services:
     fiftyonedegrees:
         class:     %fiftyonedegrees.class%
-        arguments: [%data_file_path%]

@@ -16,6 +16,11 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('fifty_one_degrees');
 
+        $rootNode
+            ->children()
+            ->scalarNode('data_file_path')->defaultValue(null)->end()
+            ->end();
+
         return $treeBuilder->buildTree();
     }
 }

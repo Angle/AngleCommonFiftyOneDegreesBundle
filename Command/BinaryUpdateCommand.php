@@ -19,7 +19,8 @@ class BinaryUpdateCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln("Updating 51 Degrees binary file it may take awhile please be patient...");
-
+        global $_SERVER;
+        $_SERVER['HTTP_USER_AGENT'] = " ";
         $fiftyOneDegrees = $this->getContainer()->get('fiftyonedegrees');
         $fiftyOneDegrees->updateBinary();
 

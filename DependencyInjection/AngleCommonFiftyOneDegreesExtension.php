@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
 
 
-class FiftyOneDegreesExtension extends Extension
+class AngleCommonFiftyOneDegreesExtension extends Extension
 {
     /**
      * @param array            $configs

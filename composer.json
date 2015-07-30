@@ -1,0 +1,23 @@
+{
+    "name": "angle/common/fiftyonedegrees-bundle",
+    "type": "symfony-bundle",
+    "description": "A simple Symfony2 bundle for the API for FiftyOneDegrees mobile detection.",
+    "keywords": ["FiftyOneDegrees"],
+    "homepage": "https://github.com/Angle/AngleCommonFiftyOneDegreesBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Paulo Lara",
+            "email": "jplarar@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1"
+    },
+    "autoload": {
+        "psr-0": { "Angle\\Common\\FiftyOneDegreesBundle": "" }
+    },
+    "target-dir": "Angle/Common/FiftyOneDegreesBundle"
+}

@@ -1,0 +1,7 @@
+parameters:
+    fiftyonedegrees.class: Angle\Common\FiftyOneDegreesBundle\Service\FiftyOneDegreesWrapper
+
+services:
+    fiftyonedegrees:
+        class:     %fiftyonedegrees.class%
+        arguments: [%data_file_path%]

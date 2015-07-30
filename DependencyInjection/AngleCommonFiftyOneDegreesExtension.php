@@ -20,15 +20,15 @@ class AngleCommonFiftyOneDegreesExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        if (!isset($config['data_file_path'])) {
+        if (!isset($config['51_degrees']['data_file_path'])) {
             throw new \InvalidArgumentException(
-                'The option "angle_common_fifty_one_degrees.data_file_path" must be set.'
+                'The option "angle_common_fifty_one_degrees.51_degrees.data_file_path" must be set.'
             );
         }
 
         $container->setParameter(
-            'angle_common_fifty_one_degrees.data_file_path.',
-            $config['data_file_path']
+            'angle_common_fifty_one_degrees.51_degrees.data_file_path.',
+            $config['51_degrees']['data_file_path']
         );
     }
 

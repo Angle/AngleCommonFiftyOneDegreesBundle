@@ -18,7 +18,13 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('data_file_path')->defaultValue(null)->end()
+                ->arrayNode('51_degrees')
+                    ->children()
+                        ->scalarNode('data_file_path')
+                            ->defaultValue(null)
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder->buildTree();

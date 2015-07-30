@@ -23,7 +23,7 @@
 
 $_fiftyone_degrees_defer_execution = TRUE;
 
-require_once '51Degrees.php';
+//require_once '51Degrees.php';
 
 global $_51d_suppress_update_output;
 

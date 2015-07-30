@@ -23,7 +23,7 @@ class AngleCommonFiftyOneDegreesExtension extends Extension
         $processor = new Processor();
         $config = $processor->process($configuration->getConfigTreeBuilder(), $configs);
 
-        $container->getDefinition('fiftyonedegrees')
+        $container->getDefinition('angle_common_fifty_one_degrees')
             ->addArgument($config['data_file_path']);
     }
 }

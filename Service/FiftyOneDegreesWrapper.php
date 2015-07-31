@@ -17,9 +17,4 @@ class FiftyOneDegreesWrapper
         return fiftyone_degrees_get_device_data($userAgent);
     }
 
-    public function updateBinary()
-    {
-        require_once(__DIR__.'/../Library/51Degrees_Update.php');
-    }
-
 }
